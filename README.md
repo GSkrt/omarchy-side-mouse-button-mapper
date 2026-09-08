@@ -23,8 +23,12 @@ has a ready-to-install `pacman` package attached — `python-textual`/
 resolves them for you, no build step, no AUR account needed:
 
 ```bash
-sudo pacman -U https://github.com/GSkrt/omarchy-side-mouse-button-mapper/releases/download/v0.1.0/omarchy-side-mouse-button-mapper-0.1.0-1-any.pkg.tar.zst
+sudo pacman -U https://github.com/GSkrt/omarchy-side-mouse-button-mapper/releases/download/v0.1.0/omarchy-side-mouse-button-mapper-0.1.0-2-any.pkg.tar.zst
 ```
+
+Installing prints a reminder to add yourself to the `input` group — see
+[below](#one-time-system-setup-the-input-group), the package can't safely
+do that for you.
 
 (This isn't on the AUR yet — new-account registration there is currently
 [frozen after a supply-chain attack](https://omid.dev/2026/08/10/aur-freeze-supply-chain-attack/).

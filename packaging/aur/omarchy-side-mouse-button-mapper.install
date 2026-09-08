@@ -1,0 +1,15 @@
+post_install() {
+    cat <<'EOF'
+==> omarchy-side-mouse-button-mapper: one more step before it'll work.
+
+Reading raw mouse events needs your user in the 'input' group (not
+something a package install can safely do for you -- it'd need to guess
+which user). Run:
+
+    sudo usermod -aG input $USER
+
+then log out and back in. Or use the helper script from the repo:
+
+    https://github.com/GSkrt/omarchy-side-mouse-button-mapper/blob/main/scripts/setup-input-group.sh
+EOF
+}
