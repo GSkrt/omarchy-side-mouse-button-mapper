@@ -66,14 +66,29 @@ python3 -m venv .venv
 
 Reading raw mouse events (`/dev/input/eventX`) requires being in the
 `input` group — this is a kernel permission, not something `pip`/`pipx` can
-grant, so it needs a separate step:
+grant, so it needs a separate step. Run the included script (it checks
+whether you're already in the group before touching anything, and asks for
+`sudo` itself rather than the app doing it silently):
+
+```bash
+./scripts/setup-input-group.sh
+```
+
+Or by hand, if you'd rather not run a script for a one-liner:
 
 ```bash
 sudo usermod -aG input $USER
 ```
 
-Then **log out and back in** (group membership only applies to new
-sessions). Without this, button detection fails with a permission error.
+Either way, then **log out and back in** (group membership only applies to
+new sessions). Without this, button detection fails with a permission
+error.
+
+Note this grants raw read access to *all* input devices, not just your
+mouse — including keyboards. It's the standard mechanism tools like this
+use, but if you'd rather scope access to one specific device via a udev
+rule instead of the whole `input` group, that's possible too (just more
+setup); open an issue if you want a hand with it.
 
 ## Run
 
