@@ -24,8 +24,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/GSkrt/omarchy-mb-mapper"
-Issues = "https://github.com/GSkrt/omarchy-mb-mapper/issues"
+Homepage = "https://github.com/GSkrt/omarchy-side-mouse-button-mapper"
+Issues = "https://github.com/GSkrt/omarchy-side-mouse-button-mapper/issues"
 
 [project.scripts]
 omarchy-mb-mapper = "omarchy_mb_mapper.app:run"

@@ -1,8 +1,10 @@
-# omarchy-mb-mapper
+# Omarchy Side Mouse Button Mapper
 
-A small TUI for [Omarchy](https://omarchy.org)/Hyprland: pick your mouse,
-press a side button to identify it, name it, choose a Hyprland/Omarchy
-action (or a custom shell command), and it writes a real
+A small TUI for mapping mouse side buttons (back/forward, thumb buttons) to
+[Omarchy](https://omarchy.org)/Hyprland actions — workspace switching,
+window management, launching apps, and more. Pick your mouse, press the
+side button to identify it, name it, choose a Hyprland/Omarchy action (or a
+custom shell command), and it writes a real
 `o.bind("mouse:<code>", ...)` binding into `~/.config/hypr/bindings.lua` and
 reloads Hyprland.
 
@@ -18,7 +20,7 @@ in automatically, in its own isolated environment:
 
 ```bash
 sudo pacman -S python-pipx   # one-time, if you don't already have pipx
-pipx install git+https://github.com/GSkrt/omarchy-mb-mapper.git
+pipx install git+https://github.com/GSkrt/omarchy-side-mouse-button-mapper.git
 ```
 
 This puts an `omarchy-mb-mapper` command on your `PATH`. To upgrade later:
@@ -31,8 +33,8 @@ pipx upgrade omarchy-mb-mapper
 <summary>Alternative: plain venv (no pipx)</summary>
 
 ```bash
-git clone https://github.com/GSkrt/omarchy-mb-mapper.git
-cd omarchy-mb-mapper
+git clone https://github.com/GSkrt/omarchy-side-mouse-button-mapper.git
+cd omarchy-side-mouse-button-mapper
 python3 -m venv .venv
 .venv/bin/pip install .
 .venv/bin/omarchy-mb-mapper
