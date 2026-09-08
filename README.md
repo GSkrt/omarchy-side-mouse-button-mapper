@@ -22,6 +22,18 @@ has a ready-to-install `pacman` package attached — `python-textual`/
 `python-evdev` are declared as real package dependencies, so `pacman`
 resolves them for you, no build step, no AUR account needed:
 
+Releases are signed. `pacman`'s default `SigLevel` requires a signature it
+can verify, so import the release-signing key once and mark it trusted
+before your first install (subsequent releases from the same key just
+work):
+
+```bash
+curl -sL https://raw.githubusercontent.com/GSkrt/omarchy-side-mouse-button-mapper/main/packaging/keys/release-signing-key.asc | sudo pacman-key --add -
+sudo pacman-key --lsign-key 8453C618302E97E4
+```
+
+Then install:
+
 ```bash
 sudo pacman -U https://github.com/GSkrt/omarchy-side-mouse-button-mapper/releases/download/v0.1.0/omarchy-side-mouse-button-mapper-0.1.0-2-any.pkg.tar.zst
 ```
