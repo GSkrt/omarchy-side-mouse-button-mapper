@@ -32,6 +32,25 @@ pipx upgrade omarchy-mb-mapper
 ```
 
 <details>
+<summary>Alternative: native Arch package via makepkg (no AUR account needed)</summary>
+
+A `PKGBUILD` is included in the repo, so you get a real `pacman`-managed
+package — with `python-textual`/`python-evdev` pulled in as proper package
+dependencies — without needing an AUR account at all:
+
+```bash
+git clone https://github.com/GSkrt/omarchy-side-mouse-button-mapper.git
+cd omarchy-side-mouse-button-mapper/packaging/aur
+makepkg -si
+```
+
+(This will also eventually be published to the AUR itself — currently
+blocked by [AUR's new-account registration freeze](https://omid.dev/2026/08/10/aur-freeze-supply-chain-attack/)
+following a supply-chain attack; once that lifts, `yay -S
+omarchy-side-mouse-button-mapper` will work directly.)
+</details>
+
+<details>
 <summary>Alternative: plain venv (no pipx)</summary>
 
 ```bash
