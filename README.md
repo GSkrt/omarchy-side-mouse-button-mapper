@@ -11,6 +11,8 @@ reloads Hyprland.
 No background daemon — once written, Hyprland owns the binding natively,
 same as any other keybind.
 
+![Screenshot of the app showing a detected mouse and its two configured button mappings](docs/images/screenshot.png)
+
 ## Install
 
 The package declares its own Python dependencies (`textual`, `evdev`), so
