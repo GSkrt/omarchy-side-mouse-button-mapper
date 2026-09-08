@@ -1,0 +1,25 @@
+# Maintainer: Gregor Skrt <gregor.skrt@gmail.com>
+pkgname=omarchy-side-mouse-button-mapper
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="TUI to map mouse side buttons to Omarchy/Hyprland actions"
+arch=('any')
+url="https://github.com/GSkrt/omarchy-side-mouse-button-mapper"
+license=('MIT')
+depends=('python' 'python-textual' 'python-evdev')
+makedepends=('python-build' 'python-installer' 'python-wheel' 'python-setuptools')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('24329f21db7f6b00b59732c026678fa1c45cd49f9838ebce28fb07a201d0bea4')
+b2sums=('SKIP')
+
+build() {
+  cd "$pkgname-$pkgver"
+  python -m build --wheel --no-isolation
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
