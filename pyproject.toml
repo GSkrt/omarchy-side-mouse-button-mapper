@@ -1,0 +1,38 @@
+[project]
+name = "omarchy-mb-mapper"
+version = "0.1.0"
+description = "TUI to map mouse side buttons to Hyprland/Omarchy actions"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "Gregor Skrt" },
+]
+keywords = ["hyprland", "omarchy", "mouse", "tui", "keybindings"]
+classifiers = [
+    "Environment :: Console",
+    "Environment :: X11 Applications",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Desktop Environment",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "textual>=0.60",
+    "evdev>=1.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/GSkrt/omarchy-mb-mapper"
+Issues = "https://github.com/GSkrt/omarchy-mb-mapper/issues"
+
+[project.scripts]
+omarchy-mb-mapper = "omarchy_mb_mapper.app:run"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["omarchy_mb_mapper*"]
